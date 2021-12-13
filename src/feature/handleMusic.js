@@ -59,7 +59,7 @@ const songList = [
 const $ = document.querySelector.bind(document);
 function handlePlay(e) {
   const id = e.children[0].children[0].dataset.id;
-  const song = songList.filter((e) => e.id === id)[0];
+  const song = songList.find((e) => e.id === id);
   console.log(song);
   const playeZone = $("#player-zone");
   playeZone.style.cssText = "display: block";

@@ -60,9 +60,33 @@
       </div>
     </header>
     <nav class="side-bar">
-      <div id="logo">
-        <div class="logo_img"><i class="fas fa-compact-disc"></i></div>
-        <div class="logo_brand">MP3 ZONE</div>
+      <a href="trangchu.html">
+        <div id="logo">
+          <div class="logo_img"><i class="fas fa-compact-disc"></i></div>
+          <div class="logo_brand">MP3 ZONE</div>
+        </div>
+      </a>
+      <div class="side-bar__menu">
+        <a class="menu-feature" href="#" onclick="return handleClick(this)">
+          <i class="far fa-heart"></i>
+          <span class="menu-feature__desc">Yêu thích</span>
+        </a>
+        <a class="menu-feature" href="#" onclick="return handleClick(this)">
+          <i class="far fa-list-alt"></i>
+          <span class="menu-feature__desc">Theo dõi</span>
+        </a>
+        <a class="menu-feature" href="#" onclick="return handleClick(this)">
+          <i class="fas fa-headphones-alt"></i>
+          <span class="menu-feature__desc">Danh sách phát</span>
+        </a>
+        <a class="menu-feature" href="#" onclick="return handleClick(this)">
+          <i class="far fa-star"></i>
+          <span class="menu-feature__desc">Top 100</span>
+        </a>
+        <a class="menu-feature" href="#" onclick="return handleClick(this)">
+          <i class="fas fa-guitar"></i>
+          <span class="menu-feature__desc">MP3 Zone đề xuất</span>
+        </a>
       </div>
     </nav>
     <main class="main-page">
@@ -85,7 +109,7 @@
                           class="img-fluid"
                         />
                       </div>
-                      <div class="card-img-overlay">Slide 1</div>
+                      <!-- <div class="card-img-overlay">Slide 1</div> -->
                     </div>
                   </div>
                 </div>
@@ -95,7 +119,7 @@
                       <div class="card-img">
                         <img src="" class="img-fluid" />
                       </div>
-                      <div class="card-img-overlay">Slide 2</div>
+                      <!-- <div class="card-img-overlay">Slide 2</div> -->
                     </div>
                   </div>
                 </div>
@@ -108,7 +132,7 @@
                           class="img-fluid"
                         />
                       </div>
-                      <div class="card-img-overlay">Slide 3</div>
+                      <!-- <div class="card-img-overlay">Slide 3</div> -->
                     </div>
                   </div>
                 </div>
@@ -121,7 +145,7 @@
                           class="img-fluid"
                         />
                       </div>
-                      <div class="card-img-overlay">Slide 4</div>
+                      <!-- <div class="card-img-overlay">Slide 4</div> -->
                     </div>
                   </div>
                 </div>
@@ -134,7 +158,7 @@
                           class="img-fluid"
                         />
                       </div>
-                      <div class="card-img-overlay">Slide 5</div>
+                      <!-- <div class="card-img-overlay">Slide 5</div> -->
                     </div>
                   </div>
                 </div>
@@ -147,7 +171,7 @@
                           class="img-fluid"
                         />
                       </div>
-                      <div class="card-img-overlay">Slide 6</div>
+                      <!-- <div class="card-img-overlay">Slide 6</div> -->
                     </div>
                   </div>
                 </div>
@@ -237,4 +261,14 @@
 
   <!-- Chơi nhạc  -->
   <script src="../feature/handleMusic.js"></script>
+  <!-- Active css  -->
+  <script>
+    function handleClick(e) {
+      const menu = document.querySelectorAll(".menu-feature");
+      menu.forEach((e) => {
+        e.classList.remove("active");
+      });
+      e.classList.add("active");
+    }
+  </script>
 </html>

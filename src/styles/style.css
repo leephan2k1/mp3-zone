@@ -6,6 +6,8 @@
   --sidebar-color: #292929;
   --logo-color: #00a550;
   --player-color: #181818;
+  --background-font-color: rgb(163, 162, 162);
+  --active-background-color: #404040;
 }
 * {
   box-sizing: border-box;
@@ -30,12 +32,20 @@ body {
   grid-template-columns: 1.2fr 7fr;
   grid-template-rows: 10% 85% 5%;
 }
+a {
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: #ffff;
+}
+a:hover {
+  color: var(--logo-color);
+}
 header {
   grid-area: head;
   /* background-color: var(--header-color); */
 }
 .side-bar {
-  display: grid;
+  /* display: grid; */
   grid-area: nav;
   background-color: var(--sidebar-color);
 }
@@ -152,7 +162,7 @@ footer {
   height: fit-content;
   width: 100px;
   padding: 5px;
-
+  z-index: 5;
   display: none;
   flex-direction: column;
   align-items: center;
@@ -282,4 +292,47 @@ footer {
   border: none;
   height: 100%;
 }
+.side-bar__menu {
+  height: fit-content;
+  width: 100%;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.menu-feature {
+  margin: 10px 0 10px 10px;
+  color: var(--background-font-color);
+}
+.menu-feature__desc {
+  margin-left: 5px;
+}
+.menu-feature.active {
+  color: #ffff;
+  margin-left: 0;
+  padding: 10px;
+  border-right: 2px solid var(--logo-color);
+  background-color: var(--active-background-color);
+  transition: all 0.5s;
+}
 /* Trang chủ */
+
+/* Responsive */
+/* mobile  */
+@media only screen and (max-width: 739px) {
+  .logo_img {
+    font-size: 40px;
+  }
+  .menu-feature__desc {
+    display: none;
+  }
+}
+/* tablet */
+@media only screen and (min-width: 740px) and (max-width: 1023px) {
+  .logo_img {
+    font-size: 50px;
+  }
+}
+/* desktop */
+@media only screen and (min-width: 1024px) {
+}
+/* Responsive */
