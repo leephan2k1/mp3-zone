@@ -1,0 +1,272 @@
+/* Layout không chỉnh sửa! */
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+:root {
+  --header-color: #1c1f1f;
+  --background-color: #1e1e1e;
+  --sidebar-color: #292929;
+  --logo-color: #00a550;
+  --player-color: #181818;
+}
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+html {
+  font-size: 62.5%;
+  height: 100%;
+  width: 100%;
+}
+body {
+  font-family: "Nunito", sans-serif;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: grid;
+  grid-template-areas:
+    "nav head"
+    "nav main"
+    "nav foot";
+  grid-template-columns: 1.2fr 7fr;
+  grid-template-rows: 10% 85% 5%;
+}
+header {
+  grid-area: head;
+  /* background-color: var(--header-color); */
+}
+.side-bar {
+  display: grid;
+  grid-area: nav;
+  background-color: var(--sidebar-color);
+}
+#logo {
+  width: 100%;
+  text-align: center;
+  height: fit-content;
+  color: var(--logo-color);
+  margin-top: 10px;
+  padding: 10px;
+}
+.logo_img {
+  font-size: 75px;
+}
+.logo_brand {
+  font-size: 2rem;
+}
+main {
+  display: grid;
+  grid-area: main;
+  background-color: var(--background-color);
+  overflow-y: auto;
+}
+/* Trang chủ */
+main.main-page {
+  grid-template-areas:
+    "carousel"
+    "music-list-wrapper"
+    "music-rank"
+    "favorite-singer";
+  grid-template-rows: 350px 750px 500px 400px;
+}
+#carousel {
+  grid-area: carousel;
+  margin: 2rem 1rem 1rem 1rem;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: aqua; */
+}
+.music-rank {
+  margin: 2rem 0;
+  grid-area: music-rank;
+  background-color: tan;
+}
+.list-title {
+  color: #ffff;
+}
+.music-list-wrapper {
+  grid-area: music-list-wrapper;
+  margin: 1rem 0;
+  /* background-color: coral; */
+  display: flex;
+  flex-direction: column;
+}
+.music-list + .music-list {
+  margin-top: 4rem;
+}
+.music-list {
+  width: 100%;
+  height: 250px;
+  background-color: tomato;
+}
+.favorite-singer {
+  margin: 2rem 0;
+  background-color: rebeccapurple;
+}
+/* Trang chung: đăng ký, đăng nhập, liên hệ */
+main.general {
+}
+
+main.follow-page {
+  grid-template-areas:
+    "title"
+    "music-list";
+}
+footer {
+  grid-area: foot;
+  background-color: #181818;
+}
+
+.navBar {
+  background-color: var(--background-color);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navBar__menu {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-right: 50px;
+}
+.user {
+  color: #ffff;
+  font-size: 3rem;
+  margin-left: 30px;
+  position: relative;
+}
+.user:hover {
+  color: var(--logo-color);
+  cursor: pointer;
+}
+
+.user__dropdown {
+  position: absolute;
+  right: -29px;
+  border: 1px solid;
+  height: fit-content;
+  width: 100px;
+  padding: 5px;
+
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.user:hover .user__dropdown {
+  display: flex;
+}
+.feature,
+.user-feature {
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: #ffff;
+}
+.feature:hover,
+.user-feature:hover {
+  color: var(--logo-color);
+}
+.feature + .feature {
+  margin-left: 20px;
+}
+.search__wrapper {
+  width: 150%;
+  height: 35px;
+  margin-left: 50px;
+  border-radius: 15px;
+  background-color: #353535;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+}
+#search-box {
+  width: 90%;
+  height: 100%;
+  background-color: inherit;
+  border: none;
+  outline: none;
+  color: #ffff;
+  font-size: 1.4rem;
+}
+#search-box:focus {
+  outline: none;
+}
+.search-button {
+  width: fit-content;
+  height: 100%;
+  text-align: center;
+  padding: 9px;
+}
+.search-button:hover {
+  cursor: pointer;
+}
+.fa-search {
+  color: #686868;
+  font-size: 15px;
+}
+
+/* Layout không chỉnh sửa! */
+
+/* Trang chủ */
+@media (max-width: 767px) {
+  .carousel-inner .carousel-item > div {
+    display: none;
+  }
+  .carousel-inner .carousel-item > div:first-child {
+    display: block;
+  }
+}
+
+.carousel-inner .carousel-item.active,
+.carousel-inner .carousel-item-next,
+.carousel-inner .carousel-item-prev {
+  display: flex;
+}
+
+/* medium and up screens */
+@media (min-width: 768px) {
+  .carousel-inner .carousel-item-end.active,
+  .carousel-inner .carousel-item-next {
+    transform: translateX(25%);
+  }
+
+  .carousel-inner .carousel-item-start.active,
+  .carousel-inner .carousel-item-prev {
+    transform: translateX(-25%);
+  }
+}
+
+.carousel-inner .carousel-item-end,
+.carousel-inner .carousel-item-start {
+  transform: translateX(0);
+}
+#player-zone {
+  width: 100%;
+  height: 100px;
+  background-color: var(--player-color);
+  position: absolute;
+  bottom: -10px;
+  display: none;
+}
+#aplayer {
+  border-radius: 5px;
+  color: #ffff;
+  background: none;
+}
+.aplayer .aplayer-info .aplayer-controller .aplayer-bar-wrap .aplayer-bar {
+  color: #5e5e5e;
+}
+.aplayer .aplayer-info .aplayer-controller .aplayer-time {
+  color: #ffff;
+}
+.aplayer-played {
+  background: rgb(255, 255, 255) !important;
+}
+#aplayer {
+  color: #ffff;
+}
