@@ -81,7 +81,7 @@
                     <div class="card">
                       <div class="card-img">
                         <img
-                          src="//via.placeholder.com/500x400/31f?text=1"
+                          src="/public/images/ditheobongmattroi.jpg"
                           class="img-fluid"
                         />
                       </div>
@@ -93,10 +93,7 @@
                   <div class="col-md-3">
                     <div class="card">
                       <div class="card-img">
-                        <img
-                          src="//via.placeholder.com/500x400/e66?text=2"
-                          class="img-fluid"
-                        />
+                        <img src="" class="img-fluid" />
                       </div>
                       <div class="card-img-overlay">Slide 2</div>
                     </div>
@@ -185,9 +182,7 @@
       <section class="music-list-wrapper">
         <h2 class="list-title">Top 100</h2>
         <div class="music-list">
-            <div class='row'>
-                
-            </div>
+          <div class="row"></div>
         </div>
         <div class="music-list">music list</div>
         <div class="music-list">music list</div>
@@ -211,21 +206,35 @@
     crossorigin="anonymous"
   ></script>
 
+  <!-- load ảnh carousel -->
+  <script type="module" src="../feature/handleLoadCarousel.js"></script>
+
+  <!-- Xử lý carousel -->
   <script>
-    // Xử lý carousel
-    let items = document.querySelectorAll(".carousel .carousel-item");
-    items.forEach((el) => {
-      const minPerSlide = 4;
-      let next = el.nextElementSibling;
-      for (var i = 1; i < minPerSlide; i++) {
-        if (!next) {
-          next = items[0];
+    window.onload = () => {
+      let items = document.querySelectorAll(".carousel .carousel-item");
+      items.forEach((el) => {
+        const cardList = document.querySelectorAll(".card");
+        for (var i = 0; i < cardList.length; i++) {
+          // cardList[i].addEventListener("click", handlePlay(this));
+          cardList[i].setAttribute("onclick", "return handlePlay(this)");
+          // console.log(cardList[i]);
         }
-        let cloneChild = next.cloneNode(true);
-        el.appendChild(cloneChild.children[0]);
-        next = next.nextElementSibling;
-      }
-    });
+        const minPerSlide = 4;
+        let next = el.nextElementSibling;
+        for (var i = 1; i < minPerSlide; i++) {
+          if (!next) {
+            next = items[0];
+          }
+          let cloneChild = next.cloneNode(true);
+          el.appendChild(cloneChild.children[0]);
+          next = next.nextElementSibling;
+        }
+      });
+    };
+    // console.log(carousel);
   </script>
-  <script src="../main.js"></script>
+
+  <!-- Chơi nhạc  -->
+  <script src="../feature/handleMusic.js"></script>
 </html>

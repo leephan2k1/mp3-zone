@@ -255,7 +255,7 @@ footer {
 }
 #aplayer {
   border-radius: 5px;
-  color: #ffff;
+  /* color: #ffff; */
   background: none;
 }
 .aplayer .aplayer-info .aplayer-controller .aplayer-bar-wrap .aplayer-bar {
@@ -270,3 +270,16 @@ footer {
 #aplayer {
   color: #ffff;
 }
+.card-img > img {
+  padding: 5px;
+}
+.card:hover {
+  cursor: pointer;
+}
+.carousel-item,
+.card {
+  background-color: var(--background-color);
+  border: none;
+  height: 100%;
+}
+/* Trang chủ */

@@ -4,8 +4,6 @@ const ap = new APlayer({
     {
       name: "name",
       artist: "artist",
-      listFolded: false,
-      listMaxHeight: 90,
       mini: false,
       url: "/public/music/song1.mp3",
       cover:
