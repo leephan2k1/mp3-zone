@@ -30,7 +30,7 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="../styles/style.css" />
-    <title>Trang chủ</title>
+    <title>Mp3 zone - Trang chủ</title>
   </head>
   <body>
     <header>
@@ -86,6 +86,28 @@
         <a class="menu-feature" href="#" onclick="return handleClick(this)">
           <i class="fas fa-guitar"></i>
           <span class="menu-feature__desc">MP3 Zone đề xuất</span>
+        </a>
+      </div>
+      <hr class="line" />
+      <div class="side-bar__menu mobile">
+        <a class="menu-feature" href="#" onclick="return handleClick(this)">
+          <i class="fas fa-dollar-sign"></i>
+          <span class="menu-feature__desc">Dịch vụ</span>
+        </a>
+        <a class="menu-feature" href="#" onclick="return handleClick(this)">
+          <i class="fas fa-file-signature"></i>
+          <span class="menu-feature__desc">Liên hệ</span>
+        </a>
+      </div>
+      <hr class="line" />
+      <div class="side-bar__menu mobile">
+        <a class="menu-feature" href="#" onclick="return handleClick(this)">
+          <i class="fas fa-sign-in-alt"></i>
+          <span class="menu-feature__desc">Đăng nhập</span>
+        </a>
+        <a class="menu-feature" href="#" onclick="return handleClick(this)">
+          <i class="fas fa-plus"></i>
+          <span class="menu-feature__desc">Đăng ký</span>
         </a>
       </div>
     </nav>
@@ -205,8 +227,74 @@
       </div>
       <section class="music-list-wrapper">
         <h2 class="list-title">Top 100</h2>
-        <div class="music-list">
-          <div class="row"></div>
+        <div class="music-list container">
+          <div class="row">
+            <div class="center col-sm-6 col-md-4 col-lg-3">
+              <div class="music-card-wrapper">
+                <div class="overlay">
+                  <i class="fas fa-play"></i>
+                </div>
+                <div class="music-card__img">
+                  <img
+                    src="https://photo-resize-zmp3.zadn.vn/w320_r1x1_webp/cover/d/3/8/7/d3873c4c5bc6804bf1e49693ef3e614b.jpg"
+                    alt="test"
+                  />
+                </div>
+                <h3 class="music-card__desc list-title">
+                  Top 100 nhạc Vpop hay nhất
+                </h3>
+              </div>
+            </div>
+            <div class="center col-sm-6 col-md-4 col-lg-3">
+              <div class="music-card-wrapper">
+                <div class="overlay">
+                  <i class="fas fa-play"></i>
+                </div>
+                <div class="music-card__img">
+                  <img
+                    src="https://photo-resize-zmp3.zadn.vn/w320_r1x1_webp/cover/4/6/a/0/46a0e185af14dbbeede4466b1ac9239a.jpg"
+                    alt="test"
+                  />
+                </div>
+                <h3 class="music-card__desc list-title">
+                  Top 100 Bài hát nhạc trẻ hay nhất
+                </h3>
+              </div>
+            </div>
+            <div class="center col-sm-6 col-md-4 col-lg-3">
+              <div class="music-card-wrapper">
+                <div class="overlay">
+                  <i class="fas fa-play"></i>
+                </div>
+                <div class="music-card__img">
+                  <img
+                    src="https://photo-resize-zmp3.zadn.vn/w320_r1x1_webp/cover/c/5/f/c/c5fc615c43215c6b72676f42767855ee.jpg"
+                    alt="test"
+                  />
+                </div>
+
+                <h3 class="music-card__desc list-title">
+                  Top 100 Nhạc Electronic/Dance hay nhất
+                </h3>
+              </div>
+            </div>
+            <div class="center col-sm-6 col-md-4 col-lg-3">
+              <div class="music-card-wrapper">
+                <div class="overlay">
+                  <i class="fas fa-play"></i>
+                </div>
+                <div class="music-card__img">
+                  <img
+                    src="https://photo-resize-zmp3.zadn.vn/w320_r1x1_webp/cover/f/2/5/2/f2527ceaab79370a6bacec6f667fe1c1.jpg"
+                    alt="test"
+                  />
+                </div>
+                <h3 class="music-card__desc list-title">
+                  Top 100 Nhạc Trữ Tình hay nhất
+                </h3>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="music-list">music list</div>
         <div class="music-list">music list</div>
@@ -269,6 +357,25 @@
         e.classList.remove("active");
       });
       e.classList.add("active");
+    }
+    const user = document.querySelector(".user");
+    let sidebarToggle = false;
+    const sidebar = document.querySelector(".side-bar");
+
+    if (window.innerWidth < 740) {
+      // console.log(window.innerWidth < 740);
+      if (user) {
+        user.onclick = () => {
+          // console.log(sidebar);
+          if (sidebar && !sidebarToggle) {
+            sidebar.style.cssText = "transform: translateX(0)";
+            sidebarToggle = !sidebarToggle;
+          } else if (sidebarToggle) {
+            sidebar.style.cssText = "transform: translateX(-300px)";
+            sidebarToggle = !sidebarToggle;
+          }
+        };
+      }
     }
   </script>
 </html>

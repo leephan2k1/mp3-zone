@@ -48,6 +48,7 @@ header {
   /* display: grid; */
   grid-area: nav;
   background-color: var(--sidebar-color);
+  transform: translateX(0);
 }
 #logo {
   width: 100%;
@@ -90,14 +91,14 @@ main.main-page {
 .music-rank {
   margin: 2rem 0;
   grid-area: music-rank;
-  background-color: tan;
+  /* background-color: tan; */
 }
 .list-title {
   color: #ffff;
 }
 .music-list-wrapper {
   grid-area: music-list-wrapper;
-  margin: 1rem 0;
+  margin: 1rem 10px;
   /* background-color: coral; */
   display: flex;
   flex-direction: column;
@@ -107,12 +108,72 @@ main.main-page {
 }
 .music-list {
   width: 100%;
-  height: 250px;
-  background-color: tomato;
+  height: fit-content;
+
+  /* background-color: tomato; */
 }
-.favorite-singer {
-  margin: 2rem 0;
-  background-color: rebeccapurple;
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.music-card-wrapper {
+  max-width: 300px;
+  height: 100%;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+}
+.col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.fa-play {
+  border: 1px solid;
+  padding: 10px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 3rem;
+}
+.music-card__desc {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.music-card__img {
+  overflow: hidden;
+  height: 90%;
+  max-width: 300px;
+}
+.music-card-wrapper > img {
+  width: 90%;
+  height: 90%;
+}
+.music-card-wrapper:hover img {
+  transform: scale(110%);
+  transition: all 0.8s;
+  cursor: pointer;
+}
+.music-card-wrapper:hover .overlay {
+  z-index: 5;
+  cursor: pointer;
 }
 /* Trang chung: đăng ký, đăng nhập, liên hệ */
 main.general {
@@ -282,6 +343,9 @@ footer {
 }
 .card-img > img {
   padding: 5px;
+  height: 100%;
+  min-height: 100%;
+  border-radius: 10px;
 }
 .card:hover {
   cursor: pointer;
@@ -291,6 +355,8 @@ footer {
   background-color: var(--background-color);
   border: none;
   height: 100%;
+  /* transition: all 0.5s; */
+  overflow: hidden;
 }
 .side-bar__menu {
   height: fit-content;
@@ -314,25 +380,63 @@ footer {
   background-color: var(--active-background-color);
   transition: all 0.5s;
 }
+.mobile {
+  display: none;
+}
 /* Trang chủ */
 
 /* Responsive */
 /* mobile  */
 @media only screen and (max-width: 739px) {
+  .mobile {
+    display: flex;
+  }
   .logo_img {
     font-size: 40px;
   }
-  .menu-feature__desc {
+  .feature {
     display: none;
   }
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .side-bar {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    z-index: 69;
+    width: 50%;
+    height: 100vh;
+    transform: translateX(-300px);
+    transition: all 0.6s;
+  }
+  .search__wrapper {
+    width: 130%;
+    font-size: 0.5rem;
+    margin-left: 20px;
+  }
+  .navBar__menu {
+    margin-right: 20px;
+  }
+  .user:hover .user__dropdown {
+    display: none;
+  }
+  .line {
+    color: #fff;
+  }
+  /* .music-list-wrapper {
+    overflow-y: hidden;
+  } */
 }
 /* tablet */
-@media only screen and (min-width: 740px) and (max-width: 1023px) {
+@media only screen and (min-width: 740px) and (max-width: 1024px) {
   .logo_img {
     font-size: 50px;
   }
 }
 /* desktop */
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 1025px) {
 }
 /* Responsive */
