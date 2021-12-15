@@ -79,7 +79,7 @@ main.main-page {
     "last-song";
   grid-template-rows: 350px 1fr 1fr 1fr;
 }
-.last-song {
+#last-song {
   grid-area: last-song;
   display: none;
 }
@@ -166,6 +166,7 @@ main.main-page {
   height: 80%;
   width: 100%;
   max-width: 300px;
+  max-height: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -185,6 +186,7 @@ main.main-page {
 }
 /* Trang chung: đăng ký, đăng nhập, liên hệ */
 main.general {
+  height: 100%;
 }
 
 main.follow-page {
@@ -404,7 +406,7 @@ footer {
   max-width: 280px;
 }
 .overlay-circle {
-  transform: scale(95%);
+  background-color: unset;
 }
 .circle-hover:hover img {
   transform: scale(80%);
@@ -415,6 +417,28 @@ footer {
   transform: scale(70%);
 }
 /* Trang chủ */
+
+/* Top 100 */
+.rank-wrapper {
+  margin: auto;
+  width: 90%;
+  height: 90%;
+  /* background-color: tomato; */
+}
+.rank-wrapper__title {
+  margin: 1rem 0;
+}
+.table,
+.rank-wrapper__title {
+  font-size: 2rem;
+  color: #fff;
+}
+.thumbnail {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+/* Top 100 */
 
 /* Responsive */
 /* mobile  */
@@ -431,7 +455,7 @@ footer {
   body {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /* justify-content: center; */
   }
   .side-bar {
     display: flex;

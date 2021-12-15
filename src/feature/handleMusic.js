@@ -54,14 +54,36 @@ const songList = [
     category: "Nhac tre",
     type: "V-pop",
   },
+  {
+    id: "007",
+    name: "Wellerman",
+    artist: "Nathan Evans",
+    url: "/public/music/Wellerman.mp3",
+    cover: "/public/images/Wellerman.jpg",
+    category: "Nhac tre",
+    type: "V-pop",
+  },
 ];
 
 const $ = document.querySelector.bind(document);
 function handlePlay(e) {
-  const id = e.children[0].children[0].dataset.id;
+  // console.log(e);
+  const id = e.children[0].children[0].dataset.id || e.dataset.id;
   const song = songList.find((e) => e.id === id);
-  console.log(song);
+  // console.log(song);
   const playeZone = $("#player-zone");
+
+  // lưu lịch sử bài hát xuống local
+  if (localStorage.getItem("last-song")) {
+    const songList = JSON.parse(localStorage.getItem("last-song"));
+    if (!songList.some((e) => e.id === song.id)) {
+      songList.push(song);
+    }
+    localStorage.setItem("last-song", JSON.stringify(songList));
+  } else {
+    localStorage.setItem("last-song", JSON.stringify([song]));
+  }
+
   playeZone.style.cssText = "display: block";
   const ap = new APlayer({
     container: document.getElementById("aplayer"),

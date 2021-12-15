@@ -1,5 +1,14 @@
 const songList = [
   {
+    id: "007",
+    name: "Wellerman",
+    artist: "Nathan Evans",
+    url: "/public/music/Wellerman.mp3",
+    cover: "/public/images/Wellerman.jpg",
+    category: "Nhac tre",
+    type: "V-pop",
+  },
+  {
     id: "001",
     name: "Đi theo bóng mặt trời",
     artist: "Đen Vâu",

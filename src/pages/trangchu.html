@@ -67,45 +67,49 @@
         </div>
       </a>
       <div class="side-bar__menu">
-        <a class="menu-feature" href="#" onclick="return handleClick(this)">
+        <a data-id="0" class="menu-feature" href="#" onclick="return handleClick(this)">
           <i class="far fa-heart"></i>
           <span class="menu-feature__desc">Yêu thích</span>
         </a>
-        <a class="menu-feature" href="#" onclick="return handleClick(this)">
+        <a data-id="1" class="menu-feature" href="#" onclick="return handleClick(this)">
           <i class="far fa-list-alt"></i>
           <span class="menu-feature__desc">Theo dõi</span>
         </a>
-        <a class="menu-feature" href="#" onclick="return handleClick(this)">
+        <a data-id="2" class="menu-feature" href="#" onclick="return handleClick(this)">
           <i class="fas fa-headphones-alt"></i>
           <span class="menu-feature__desc">Danh sách phát</span>
         </a>
-        <a class="menu-feature" href="#" onclick="return handleClick(this)">
+        <a data-id="3" class="menu-feature" href="top100.html" onclick="return handleClick(this)">
           <i class="far fa-star"></i>
           <span class="menu-feature__desc">Top 100</span>
         </a>
-        <a class="menu-feature" href="#" onclick="return handleClick(this)">
+        <a data-id="4" class="menu-feature" href="#" onclick="return handleClick(this)">
           <i class="fas fa-guitar"></i>
           <span class="menu-feature__desc">MP3 Zone đề xuất</span>
+        </a>
+        <a data-id="5" class="menu-feature" href="#last-song" onclick="return handleClick(this)">
+          <i class="fas fa-history"></i>
+          <span class="menu-feature__desc">Vừa nghe</span>
         </a>
       </div>
       <hr class="line" />
       <div class="side-bar__menu mobile">
-        <a class="menu-feature" href="#" onclick="return handleClick(this)">
+        <a data-id="6" class="menu-feature" href="#" onclick="return handleClick(this)">
           <i class="fas fa-dollar-sign"></i>
           <span class="menu-feature__desc">Dịch vụ</span>
         </a>
-        <a class="menu-feature" href="#" onclick="return handleClick(this)">
+        <a data-id="7" class="menu-feature" href="#" onclick="return handleClick(this)">
           <i class="fas fa-file-signature"></i>
           <span class="menu-feature__desc">Liên hệ</span>
         </a>
       </div>
       <hr class="line" />
-      <div class="side-bar__menu mobile">
+      <div data-id="8" class="side-bar__menu mobile">
         <a class="menu-feature" href="#" onclick="return handleClick(this)">
           <i class="fas fa-sign-in-alt"></i>
           <span class="menu-feature__desc">Đăng nhập</span>
         </a>
-        <a class="menu-feature" href="#" onclick="return handleClick(this)">
+        <a data-id="9" class="menu-feature" href="#" onclick="return handleClick(this)">
           <i class="fas fa-plus"></i>
           <span class="menu-feature__desc">Đăng ký</span>
         </a>
@@ -445,7 +449,6 @@
         </div>
       </section>
       <section class="anime-ost">
-        <div class="music-list container">
           <h2 class="list-title">J-pop & Anime OST</h2>
           <div class="music-list container">
             <div class="row">
@@ -517,12 +520,13 @@
                   </h3>
                 </div>
               </div>
-            </div>
+           
         </div>
       </section>
-      <section class="last-song">
+      <section id="last-song">
         <div class="music-list container">
           <h2 class="list-title">Vừa nghe</h2>
+          <div class='row'></div>
         </div>
       </section>
     </main>
@@ -573,33 +577,8 @@
 
   <!-- Chơi nhạc  -->
   <script src="../feature/handleMusic.js"></script>
+  <!-- load lịch sử bài hát  -->
+  <script src='../feature/handleLastSongs.js'></script>
   <!-- Active css  -->
-  <script>
-    function handleClick(e) {
-      const menu = document.querySelectorAll(".menu-feature");
-      menu.forEach((e) => {
-        e.classList.remove("active");
-      });
-      e.classList.add("active");
-    }
-    const user = document.querySelector(".user");
-    let sidebarToggle = false;
-    const sidebar = document.querySelector(".side-bar");
-
-    if (window.innerWidth < 740) {
-      // console.log(window.innerWidth < 740);
-      if (user) {
-        user.onclick = () => {
-          // console.log(sidebar);
-          if (sidebar && !sidebarToggle) {
-            sidebar.style.cssText = "transform: translateX(0)";
-            sidebarToggle = !sidebarToggle;
-          } else if (sidebarToggle) {
-            sidebar.style.cssText = "transform: translateX(-300px)";
-            sidebarToggle = !sidebarToggle;
-          }
-        };
-      }
-    }
-  </script>
+  <script src="../feature/handleActiveCSS.js">  </script>
 </html>
