@@ -75,9 +75,13 @@ main.main-page {
   grid-template-areas:
     "carousel"
     "music-list-wrapper"
-    "music-rank"
-    "favorite-singer";
-  grid-template-rows: 350px 750px 500px 400px;
+    "anime-ost"
+    "last-song";
+  grid-template-rows: 350px 1fr 1fr 1fr;
+}
+.last-song {
+  grid-area: last-song;
+  display: none;
 }
 #carousel {
   grid-area: carousel;
@@ -88,9 +92,9 @@ main.main-page {
   align-items: center;
   /* background-color: aqua; */
 }
-.music-rank {
-  margin: 2rem 0;
-  grid-area: music-rank;
+.anime-ost {
+  margin: 2rem;
+  grid-area: anime-ost;
   /* background-color: tan; */
 }
 .list-title {
@@ -104,7 +108,7 @@ main.main-page {
   flex-direction: column;
 }
 .music-list + .music-list {
-  margin-top: 4rem;
+  margin-top: 2rem;
 }
 .music-list {
   width: 100%;
@@ -139,7 +143,7 @@ main.main-page {
   z-index: -1;
   background-color: rgba(0, 0, 0, 0.5);
   width: 100%;
-  height: 90%;
+  height: 80%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -159,16 +163,20 @@ main.main-page {
 }
 .music-card__img {
   overflow: hidden;
-  height: 90%;
+  height: 80%;
+  width: 100%;
   max-width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .music-card-wrapper > img {
-  width: 90%;
+  width: 100%;
   height: 90%;
 }
 .music-card-wrapper:hover img {
   transform: scale(110%);
-  transition: all 0.8s;
+  transition: all 0.5s;
   cursor: pointer;
 }
 .music-card-wrapper:hover .overlay {
@@ -383,6 +391,29 @@ footer {
 .mobile {
   display: none;
 }
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  width: 40px;
+  height: 40px;
+}
+.circle {
+  border-radius: 50%;
+}
+
+.circle-hover {
+  max-width: 280px;
+}
+.overlay-circle {
+  transform: scale(95%);
+}
+.circle-hover:hover img {
+  transform: scale(80%);
+  transition: all 0.2s;
+  cursor: pointer;
+}
+.scale {
+  transform: scale(70%);
+}
 /* Trang chủ */
 
 /* Responsive */
@@ -409,7 +440,7 @@ footer {
     z-index: 69;
     width: 50%;
     height: 100vh;
-    transform: translateX(-300px);
+    transform: translateX(-400px);
     transition: all 0.6s;
   }
   .search__wrapper {
@@ -426,12 +457,21 @@ footer {
   .line {
     color: #fff;
   }
-  /* .music-list-wrapper {
-    overflow-y: hidden;
-  } */
+  .music-card-wrapper:hover .overlay {
+    z-index: -5;
+  }
 }
 /* tablet */
 @media only screen and (min-width: 740px) and (max-width: 1024px) {
+  .scale {
+    transform: scale(60%);
+  }
+  .circle-hover:hover img {
+    transform: scale(70%);
+  }
+  .music-card-wrapper:hover .overlay {
+    z-index: -5;
+  }
   .logo_img {
     font-size: 50px;
   }
