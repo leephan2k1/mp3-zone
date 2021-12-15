@@ -11,7 +11,10 @@ if (localStorage.getItem("active-menu")) {
   localStorage.setItem("active-menu", JSON.stringify(newArr));
 }
 //reset active trang chủ
-if (window.location.pathname === "/src/pages/trangchu.html") {
+if (
+  window.location.pathname === "/src/pages/trangchu.html" ||
+  window.location.pathname === "/src/pages/dangnhap.html"
+) {
   menu.forEach((e) => {
     e.classList.remove("active");
   });

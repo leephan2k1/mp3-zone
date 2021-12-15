@@ -1,3 +1,36 @@
+const $ = document.querySelector.bind(document);
+function handlePlay(e) {
+  // console.log(e);
+  const id = e.children[0].children[0].dataset.id || e.dataset.id;
+  const song = songList.find((e) => e.id === id);
+  // console.log(song);
+  const playeZone = $("#player-zone");
+
+  // lưu lịch sử bài hát xuống local
+  if (localStorage.getItem("last-song")) {
+    const songList = JSON.parse(localStorage.getItem("last-song"));
+    if (!songList.some((e) => e.id === song.id)) {
+      songList.push(song);
+    }
+    localStorage.setItem("last-song", JSON.stringify(songList));
+  } else {
+    localStorage.setItem("last-song", JSON.stringify([song]));
+  }
+
+  playeZone.style.cssText = "display: block";
+  const ap = new APlayer({
+    container: document.getElementById("aplayer"),
+    autoplay: true,
+    audio: [
+      {
+        name: song.name,
+        artist: song.artist,
+        url: song.url,
+        cover: song.cover,
+      },
+    ],
+  });
+}
 const songList = [
   {
     id: "001",
@@ -63,38 +96,40 @@ const songList = [
     category: "Nhac tre",
     type: "V-pop",
   },
+  {
+    id: "008",
+    name: "Renai-Circulation",
+    artist: "Kana Hanazawa",
+    url: "/public/music/Renai-Circulation.mp3",
+    cover: "/public/images/Renai-Circulation.jpg",
+    category: "Nhac tre",
+    type: "V-pop",
+  },
+  {
+    id: "009",
+    name: "Blue Bird",
+    artist: "Ikimono Gakari",
+    url: "/public/music/blue-bird.mp3",
+    cover: "/public/images/bluebird.jpg",
+    category: "Nhac tre",
+    type: "J-pop",
+  },
+  {
+    id: "010",
+    name: "Your name",
+    artist: "Radwimps",
+    url: "/public/music/your-name.mp3",
+    cover: "/public/images/your-name.jpg",
+    category: "Nhac tre",
+    type: "J-pop",
+  },
+  {
+    id: "011",
+    name: "Amadare No Uta",
+    artist: "Inori Minase & Yurika Kubo",
+    url: "/public/music/Amadare-No-Uta.mp3",
+    cover: "/public/images/grillasttour.jpg",
+    category: "Nhac tre",
+    type: "J-pop",
+  },
 ];
-
-const $ = document.querySelector.bind(document);
-function handlePlay(e) {
-  // console.log(e);
-  const id = e.children[0].children[0].dataset.id || e.dataset.id;
-  const song = songList.find((e) => e.id === id);
-  // console.log(song);
-  const playeZone = $("#player-zone");
-
-  // lưu lịch sử bài hát xuống local
-  if (localStorage.getItem("last-song")) {
-    const songList = JSON.parse(localStorage.getItem("last-song"));
-    if (!songList.some((e) => e.id === song.id)) {
-      songList.push(song);
-    }
-    localStorage.setItem("last-song", JSON.stringify(songList));
-  } else {
-    localStorage.setItem("last-song", JSON.stringify([song]));
-  }
-
-  playeZone.style.cssText = "display: block";
-  const ap = new APlayer({
-    container: document.getElementById("aplayer"),
-    autoplay: true,
-    audio: [
-      {
-        name: song.name,
-        artist: song.artist,
-        url: song.url,
-        cover: song.cover,
-      },
-    ],
-  });
-}

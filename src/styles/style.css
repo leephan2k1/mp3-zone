@@ -197,6 +197,12 @@ main.follow-page {
 footer {
   grid-area: foot;
   background-color: #181818;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 1.3rem;
 }
 
 .navBar {
@@ -440,9 +446,51 @@ footer {
 }
 /* Top 100 */
 
+/* Đăng nhập */
+.login-form-wrapper {
+  margin: auto;
+  width: 30%;
+  height: 75%;
+  color: #fff;
+
+  /* background-color: tomato; */
+}
+.login-form {
+}
+.btn-primary {
+  width: 100px;
+  height: 40px;
+}
+.form-control,
+.login-form-wrapper {
+  font-size: 1.5rem;
+}
+.form-group {
+  margin: 10px 0;
+}
+.funny-wrapper {
+  position: relative;
+  margin: auto;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: tomato;
+  overflow: hidden;
+}
+.bear {
+  position: absolute;
+  transform: scale(70%);
+  top: -131px;
+  left: -300px;
+}
+/* Đăng nhập */
+
 /* Responsive */
 /* mobile  */
 @media only screen and (max-width: 739px) {
+  .login-form-wrapper {
+    width: 70%;
+  }
   .mobile {
     display: flex;
   }
@@ -487,6 +535,9 @@ footer {
 }
 /* tablet */
 @media only screen and (min-width: 740px) and (max-width: 1024px) {
+  .login-form-wrapper {
+    width: 70%;
+  }
   .scale {
     transform: scale(60%);
   }
