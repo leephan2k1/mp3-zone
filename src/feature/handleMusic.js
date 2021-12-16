@@ -32,7 +32,8 @@ function handlePlay(e) {
   });
 }
 
-function handlePlayList() {
+function handlePlayList(e) {
+  localStorage.setItem("list-type", e.dataset.type);
   window.location.replace(
     "http://" + window.location.host + "/src/pages/danhsachphat.html"
   );

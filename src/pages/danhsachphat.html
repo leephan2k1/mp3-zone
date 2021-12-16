@@ -21,7 +21,12 @@
       src="https://kit.fontawesome.com/b0ed091ff5.js"
       crossorigin="anonymous"
     ></script>
+    <!-- Thu vien xu ly mp3 player -->
     <script src="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.css"
+    />
     <link rel="stylesheet" href="../styles/style.css" />
     <title>Mp3 zone - Danh sách phát</title>
   </head>
@@ -60,7 +65,7 @@
         </div>
       </a>
       <div class="side-bar__menu">
-        <a data-id="0" class="menu-feature" href="#">
+        <a data-id="0" class="menu-feature" href="yeuthich.html">
           <i class="far fa-heart"></i>
           <span class="menu-feature__desc">Yêu thích</span>
         </a>
@@ -68,7 +73,7 @@
           <i class="far fa-list-alt"></i>
           <span class="menu-feature__desc">Theo dõi</span>
         </a>
-        <a data-id="2" class="menu-feature" href="#">
+        <a data-id="2" class="menu-feature" href="danhsachphat.html">
           <i class="fas fa-headphones-alt"></i>
           <span class="menu-feature__desc">Danh sách phát</span>
         </a>
@@ -76,7 +81,7 @@
           <i class="far fa-star"></i>
           <span class="menu-feature__desc">Top 100</span>
         </a>
-        <a data-id="4" class="menu-feature" href="#">
+        <a data-id="4" class="menu-feature" href="#suggest">
           <i class="fas fa-guitar"></i>
           <span class="menu-feature__desc">MP3 Zone đề xuất</span>
         </a>
@@ -108,7 +113,11 @@
         </a>
       </div>
     </nav>
-    <main class="general"></main>
+    <main class="general">
+      <div id="player-list">
+        <div id="aplayer"></div>
+      </div>
+    </main>
     <footer>Footer</footer>
   </body>
   <script
@@ -123,4 +132,6 @@
   ></script>
   <!-- Active css  -->
   <script src="../feature/handleActiveCSS.js"></script>
+  <!-- Load danh sach bai hat  -->
+  <script type="module" src="../feature/handleLoadSongs.js"></script>
 </html>
