@@ -1,35 +1,19 @@
-let index;
+// let index;
 const menu = document.querySelectorAll(".menu-feature");
-//load lại active từ trang khác
-if (localStorage.getItem("active-menu")) {
-  let arrayActive = JSON.parse(localStorage.getItem("active-menu"));
-  index = arrayActive.indexOf(1);
-  menu[index].classList.add("active");
-} else {
-  const newArr = new Array(11).fill(0);
-  //   newArr[e.dataset.id] = 1;
-  localStorage.setItem("active-menu", JSON.stringify(newArr));
-}
-//reset active trang chủ
-if (
-  window.location.pathname === "/src/pages/trangchu.html" ||
-  window.location.pathname === "/src/pages/dangnhap.html"
-) {
-  menu.forEach((e) => {
-    e.classList.remove("active");
-  });
-}
-function handleClick(e) {
-  menu.forEach((e) => {
-    e.classList.remove("active");
-  });
-  if (localStorage.getItem("active-menu")) {
-    let arrayActive = JSON.parse(localStorage.getItem("active-menu"));
-    arrayActive = arrayActive.fill(0);
-    arrayActive[e.dataset.id] = 1;
-    localStorage.setItem("active-menu", JSON.stringify(arrayActive));
-  }
-  e.classList.add("active");
+
+switch (window.location.pathname) {
+  case "/src/pages/theodoi.html":
+    menu[1].classList.add("active");
+    break;
+  case "/src/pages/top100.html":
+    menu[3].classList.add("active");
+    break;
+  case "/src/pages/yeuthich.html":
+    menu[0].classList.add("active");
+    break;
+  case "/src/pages/danhsachphat.html":
+    menu[2].classList.add("active");
+    break;
 }
 
 // responsive mobile

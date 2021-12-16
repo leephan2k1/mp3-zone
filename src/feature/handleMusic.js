@@ -31,6 +31,13 @@ function handlePlay(e) {
     ],
   });
 }
+
+function handlePlayList() {
+  window.location.replace(
+    "http://" + window.location.host + "/src/pages/danhsachphat.html"
+  );
+}
+
 const songList = [
   {
     id: "001",
