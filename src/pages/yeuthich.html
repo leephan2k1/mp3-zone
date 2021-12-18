@@ -28,7 +28,7 @@
   <body>
     <header>
       <div class="navBar">
-        <form class="navBar__search">
+        <form class="navBar__search" onsubmit="return searchFrm(this)">
           <div class="search__wrapper">
             <div class="search-button"><i class="fas fa-search"></i></div>
             <input
@@ -41,7 +41,7 @@
         </form>
         <div class="navBar__menu">
           <a class="feature" href="dichvu.html">Dịch vụ</a>
-          <a class="feature" href="dichvu.html">Liên hệ</a>
+          <a class="feature" href="lienhe.html">Liên hệ</a>
           <div class="user">
             <i class="fas fa-user-alt"></i>
             <div class="user__dropdown">
@@ -123,4 +123,6 @@
   ></script>
   <!-- Active css  -->
   <script src="../feature/handleActiveCSS.js"></script>
+  <!-- Search frm  -->
+  <script src="../feature/handleSearchFrm.js"></script>
 </html>

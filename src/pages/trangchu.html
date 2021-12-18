@@ -35,7 +35,7 @@
   <body>
     <header>
       <div class="navBar">
-        <form class="navBar__search">
+        <form class="navBar__search" id='frm-search' onsubmit="return searchFrm(this)">
           <div class="search__wrapper">
             <div class="search-button"><i class="fas fa-search"></i></div>
             <input
@@ -581,4 +581,6 @@
   <script src='../feature/handleLastSongs.js'></script>
   <!-- Active css  -->
   <script src="../feature/handleActiveCSS.js">  </script>
+  <!-- Search frm  -->
+  <script src='../feature/handleSearchFrm.js'></script>
 </html>
