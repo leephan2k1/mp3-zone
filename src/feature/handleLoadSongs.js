@@ -19,7 +19,6 @@ if (localStorage.getItem("list-type")) {
     order: "random",
     preload: "auto",
     loop: "all",
-
     audio: readyPlay,
   });
 }
