@@ -459,7 +459,8 @@ footer {
 /* Top 100 */
 
 /* Đăng nhập */
-.login-form-wrapper {
+.login-form-wrapper,
+.contact-form-wrapper {
   margin: auto;
   width: 30%;
   height: 75%;
@@ -474,7 +475,8 @@ footer {
   height: 40px;
 }
 .form-control,
-.login-form-wrapper {
+.login-form-wrapper,
+.contact-form-wrapper {
   font-size: 1.5rem;
 }
 .form-group {
@@ -529,7 +531,8 @@ footer {
 /* Responsive */
 /* mobile  */
 @media only screen and (max-width: 739px) {
-  .login-form-wrapper {
+  .login-form-wrapper,
+  .contact-form-wrapper {
     width: 70%;
   }
   .mobile {
@@ -576,7 +579,8 @@ footer {
 }
 /* tablet */
 @media only screen and (min-width: 740px) and (max-width: 1024px) {
-  .login-form-wrapper {
+  .login-form-wrapper,
+  .contact-form-wrapper {
     width: 70%;
   }
   .scale {
