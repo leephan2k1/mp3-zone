@@ -1,4 +1,5 @@
 const $ = document.querySelector.bind(document);
+const $$ = document.querySelectorAll.bind(document);
 function handlePlay(e) {
   // console.log(e);
   const id = e.children[0].children[0].dataset.id || e.dataset.id;
@@ -15,6 +16,50 @@ function handlePlay(e) {
     localStorage.setItem("last-song", JSON.stringify(songList));
   } else {
     localStorage.setItem("last-song", JSON.stringify([song]));
+  }
+
+  //Thêm vào vừa nghe
+  const lastSongElement = $("#last-song");
+  lastSongElement.style.cssText = "display: block";
+  const str = `
+      <div class="center-column music-card-wrapper">
+        <div class="music-card__img">
+          <div class="overlay">
+            <i class="fas fa-play"></i>
+          </div>
+          <img
+            src="${song.cover}"
+            alt="${song.name}"
+          />
+        </div>
+        <h3 class="music-card__desc list-title">
+          ${song.name}
+        </h3>
+        <div class='follow'><i class="fas fa-heart"></i> Theo dõi</div>
+      </div>
+    `;
+  const rowListElement = lastSongElement.children[0].children[1];
+  let flag = true;
+  // console.log(rowListElement.children[0].children[0].children[0]);
+  for (let i = 0; i < rowListElement.children.length; i++) {
+    if (
+      rowListElement.children[i].dataset.id === song.id ||
+      rowListElement.children[i].children[0].children[0].dataset.id === song.id
+    ) {
+      flag = false;
+      break;
+    }
+  }
+  if (flag) {
+    const element = document.createElement("div");
+    element.setAttribute("class", "center col-sm-6 col-md-4 col-lg-3");
+    element.innerHTML = str;
+    rowListElement.insertAdjacentElement("afterbegin", element);
+    element.children[0].children[0].setAttribute(
+      "onclick",
+      "return handlePlay(this)"
+    );
+    element.children[0].children[0].setAttribute("data-id", `${song.id}`);
   }
 
   playeZone.style.cssText = "display: block";

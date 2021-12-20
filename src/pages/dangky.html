@@ -21,14 +21,13 @@
       src="https://kit.fontawesome.com/b0ed091ff5.js"
       crossorigin="anonymous"
     ></script>
-    <script src="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.js"></script>
     <link rel="stylesheet" href="../styles/style.css" />
-    <title>Mp3 zone - Đăng nhập</title>
+    <title>Đăng Ký</title>
   </head>
   <body>
     <header>
       <div class="navBar">
-        <form class="navBar__search" onsubmit="return searchFrm(this)">
+        <form class="navBar__search">
           <div class="search__wrapper">
             <div class="search-button"><i class="fas fa-search"></i></div>
             <input
@@ -41,7 +40,7 @@
         </form>
         <div class="navBar__menu">
           <a class="feature" href="dichvu.html">Dịch vụ</a>
-          <a class="feature" href="lienhe.html">Liên hệ</a>
+          <a class="feature" href="dichvu.html">Liên hệ</a>
           <div class="user">
             <i class="fas fa-user-alt"></i>
             <div class="user__dropdown">
@@ -109,7 +108,7 @@
       </div>
     </nav>
     <main class="general">
-      <div class="login-form-wrapper">
+      <div class="reg-form-wrapper">
         <div class="funny-wrapper">
           <img
             class="bear"
@@ -118,12 +117,23 @@
           />
         </div>
         <form
-          class="login-form"
-          id="login-form"
+          class="reg-form"
+          id="reg-form"
           method="get"
-          action="./trangchu.html"
-          onsubmit="return validFrmLog()"
+          action="trangchu.html"
+          onsubmit="return validFrmReg(this)"
         >
+          <div class="form-group">
+            <label for="exampleInputName">Học và tên:</label>
+            <input
+              type="text"
+              name="fullName"
+              class="form-control"
+              autocomplete="cc-name"
+              id="exampleInputName"
+              placeholder="Họ và tên..."
+            />
+          </div>
           <div class="form-group">
             <label for="exampleInputEmail1">Email</label>
             <input
@@ -135,9 +145,6 @@
               aria-describedby="emailHelp"
               placeholder="Nhập tài khoản hoặc email..."
             />
-            <small id="emailHelp" class="form-text text-muted"
-              >Địa chỉ email bạn dùng để đăng ký!.</small
-            >
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">Mật khẩu</label>
@@ -150,22 +157,69 @@
               placeholder="Nhập mật khẩu..."
             />
           </div>
+          <div class="form-group">
+            <label for="inputNs" class="form-label">Ngày Sinh</label>
+            <input
+              name="birthday"
+              type="date"
+              class="form-control"
+              id="inputNs"
+            />
+          </div>
+          <div class="form-group">
+            <!-- <label for="gender" class="form-label">Giới tính</label> -->
+            <p>Giới tính</p>
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="inlineRadioOptions"
+                id="inlineRadio1"
+                value="male"
+              />
+              <label class="form-check-label" for="male">Nam</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="inlineRadioOptions"
+                id="inlineRadio2"
+                value="female"
+              />
+              <label class="form-check-label" for="female">Nữ</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="inlineRadioOptions"
+                id="inlineRadio3"
+                value="other"
+              />
+              <label class="form-check-label" for="other">Khác</label>
+            </div>
+          </div>
           <div class="form-check">
             <input
               type="checkbox"
               class="form-check-input"
+              name="accept"
               id="exampleCheck1"
             />
             <label class="form-check-label" for="exampleCheck1"
-              >Ghi nhớ đăng nhập</label
+              >Đồng ý với các điều khoản</label
             >
           </div>
-          <button type="submit" class="btn btn-primary">Đăng nhập</button>
+          <button type="submit" class="btn btn-primary">Đăng ký</button>
         </form>
       </div>
     </main>
-    <footer></footer>
+    <footer>Footer</footer>
   </body>
+  <!-- Active css  -->
+  <script src="../feature/handleActiveCSS.js"></script>
+  <script src="../feature/handleRegister.js"></script>
   <script
     src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
     integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
@@ -176,8 +230,4 @@
     integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
     crossorigin="anonymous"
   ></script>
-  <!-- Active css  -->
-  <script src="../feature/handleActiveCSS.js"></script>
-  <!-- Xu ly form  -->
-  <script src="../feature/handleLogin.js"></script>
 </html>

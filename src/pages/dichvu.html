@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+    <script src="https://kit.fontawesome.com/b0ed091ff5.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.js"></script>
+    <link rel="stylesheet" href="/src/styles/style.css">
+    <title>Mp3 zone - Dịch vụ</title>
+
+</head>
+
+<body>
+    <header>
+        <div class="navBar">
+            <form class="navBar__search">
+                <div class="search__wrapper">
+                    <div class="search-button"><i class="fas fa-search"></i></div>
+                    <input type="text" name="search-box" id="search-box" placeholder="Nhập tên bài hát, nghệ sĩ hoặc MV..." />
+                </div>
+            </form>
+            <div class="navBar__menu">
+                <a class="feature" href="dichvu.html">Dịch vụ</a>
+                <a class="feature" href="dichvu.html">Liên hệ</a>
+                <div class="user">
+                    <i class="fas fa-user-alt"></i>
+                    <div class="user__dropdown">
+                        <a class="user-feature" href="dangky.html">Đăng ký</a>
+                        <a class="user-feature" href="dangnhap.html">Đăng nhập</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <nav class="side-bar">
+        <a href="trangchu.html">
+            <div id="logo">
+                <div class="logo_img"><i class="fas fa-compact-disc"></i></div>
+                <div class="logo_brand">MP3 ZONE</div>
+            </div>
+        </a>
+        <div class="side-bar__menu">
+            <a data-id="0" class="menu-feature" href="#" onclick="return handleClick(this)">
+                <i class="far fa-heart"></i>
+                <span class="menu-feature__desc">Yêu thích</span>
+            </a>
+            <a data-id="1" class="menu-feature" href="#" onclick="return handleClick(this)">
+                <i class="far fa-list-alt"></i>
+                <span class="menu-feature__desc">Theo dõi</span>
+            </a>
+            <a data-id="2" class="menu-feature" href="#" onclick="return handleClick(this)">
+                <i class="fas fa-headphones-alt"></i>
+                <span class="menu-feature__desc">Danh sách phát</span>
+            </a>
+            <a data-id="3" class="menu-feature" href="top100.html" onclick="return handleClick(this)">
+                <i class="far fa-star"></i>
+                <span class="menu-feature__desc">Top 100</span>
+            </a>
+            <a data-id="4" class="menu-feature" href="#" onclick="return handleClick(this)">
+                <i class="fas fa-guitar"></i>
+                <span class="menu-feature__desc">MP3 Zone đề xuất</span>
+            </a>
+            <a data-id="5" class="menu-feature" href="#last-song" onclick="return handleClick(this)">
+                <i class="fas fa-history"></i>
+                <span class="menu-feature__desc">Vừa nghe</span>
+            </a>
+        </div>
+        <hr class="line" />
+        <div class="side-bar__menu mobile">
+            <a data-id="6" class="menu-feature" href="#" onclick="return handleClick(this)">
+                <i class="fas fa-dollar-sign"></i>
+                <span class="menu-feature__desc">Dịch vụ</span>
+            </a>
+            <a data-id="7" class="menu-feature" href="#" onclick="return handleClick(this)">
+                <i class="fas fa-file-signature"></i>
+                <span class="menu-feature__desc">Liên hệ</span>
+            </a>
+        </div>
+        <hr class="line" />
+        <div data-id="8" class="side-bar__menu mobile">
+            <a class="menu-feature" href="#" onclick="return handleClick(this)">
+                <i class="fas fa-sign-in-alt"></i>
+                <span class="menu-feature__desc">Đăng nhập</span>
+            </a>
+            <a data-id="9" class="menu-feature" href="#" onclick="return handleClick(this)">
+                <i class="fas fa-plus"></i>
+                <span class="menu-feature__desc">Đăng ký</span>
+            </a>
+        </div>
+    </nav>
+    <main class="service_main">
+        <div class="main_content">
+            <p>Nghe và tải nhạc chất lượng cao</p>
+            <p>Cập nhật bài hát mới liên tục</p>
+            <p>Và hơn thế nữa ...</p>
+        </div>
+        <div class="service_list">
+            <div class="service_item ">
+                <p class="service_time">1 tháng</p>
+                <p class="service_price">49.000 </p>
+                <p class="vnd">VNĐ</p>
+                <button class="register_btn">Đăng ký</button>
+            </div>
+            <div class="service_item ">
+                <p class="service_time">3 tháng</p>
+                <p class="service_price">139.000</p>
+                <p class="service_price vnd">VNĐ</p>
+                <button class="register_btn">Đăng ký</button>
+            </div>
+            <div class="service_item ">
+                <p class="service_time">6 tháng</p>
+                <p class="service_price">249.000</p>
+                <p class="service_price vnd">VNĐ</p>
+                <button class="register_btn">Đăng ký</button>
+            </div>
+        </div>
+    </main>
+    <footer>Footer</footer>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+
+</html>

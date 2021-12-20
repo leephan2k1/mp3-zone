@@ -82,6 +82,7 @@ main.main-page {
 #last-song {
   grid-area: last-song;
   display: none;
+  margin-bottom: 50px;
 }
 #carousel {
   grid-area: carousel;
@@ -460,7 +461,8 @@ footer {
 
 /* Đăng nhập */
 .login-form-wrapper,
-.contact-form-wrapper {
+.contact-form-wrapper,
+.reg-form-wrapper {
   margin: auto;
   width: 30%;
   height: 75%;
@@ -468,15 +470,14 @@ footer {
 
   /* background-color: tomato; */
 }
-.login-form {
-}
 .btn-primary {
   width: 100px;
   height: 40px;
 }
 .form-control,
 .login-form-wrapper,
-.contact-form-wrapper {
+.contact-form-wrapper,
+.reg-form-wrapper {
   font-size: 1.5rem;
 }
 .form-group {
@@ -528,11 +529,149 @@ footer {
 }
 /* Theo dõi  */
 
+/*fom đăng ký*/
+
+.reg-form-wrapper {
+  margin: 0 auto;
+}
+/* Dịch vụ */
+
+.service_main {
+  background-image: url(https://images.unsplash.com/photo-1468164016595-6108e4c60c8b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3570&q=80);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.main_content {
+  width: 100%;
+  height: 100%;
+  color: white;
+  font-size: 32px;
+  font-weight: 600;
+  text-align: center;
+  height: 200px;
+  position: relative;
+  top: 35%;
+  display: block;
+}
+
+.service_list {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.service_list_edit {
+  width: 100%;
+}
+
+.service_item {
+  color: white;
+  border-radius: 20px;
+  float: left;
+  margin: 0 8px 20px;
+  width: calc(70% / 3);
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  border: 2px solid white;
+  max-width: 300px;
+  backdrop-filter: blur(10px);
+}
+
+.service_time {
+  margin: 10px;
+  font-size: 32px;
+}
+
+.service_price {
+  font-size: 48px;
+}
+
+.vnd {
+  font-size: 32px;
+}
+
+.register_btn {
+  color: white;
+  width: 120px;
+  height: 40px;
+  border-radius: 15px;
+  border: none;
+  font-size: 18px;
+  text-transform: uppercase;
+  line-height: 40px;
+  border: 1px solid white;
+  background-color: transparent;
+  transition: all 0.2s ease-in-out;
+  margin-bottom: 30px;
+}
+
+.register_btn:hover {
+  transform: scale(1.1);
+  background-color: white;
+  color: black;
+}
+/* Yêu thích */
+
+.playlist-main {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.playlist-title {
+  color: white;
+  height: 100px;
+  font-size: 60px;
+  line-height: 80px;
+  margin-left: 10%;
+}
+
+.playlist-content {
+  width: 60%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: block;
+  position: absolute;
+  top: 13%;
+}
+
+.playlist-item {
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 45px;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 0.5px solid grey;
+}
+
+.playlist-item:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: black;
+}
+
+.song-name {
+  font-size: 20px;
+  line-height: 45px;
+  margin-left: 50px;
+  color: white;
+}
+
+.song-artist {
+  font-size: 16px;
+  line-height: 45px;
+  color: grey;
+  margin: 0 auto;
+}
 /* Responsive */
 /* mobile  */
 @media only screen and (max-width: 739px) {
   .login-form-wrapper,
-  .contact-form-wrapper {
+  .contact-form-wrapper,
+  .reg-form-wrapper {
     width: 70%;
   }
   .mobile {
@@ -576,11 +715,116 @@ footer {
   .music-card-wrapper:hover .overlay {
     z-index: -5;
   }
+  /* Dịch vụ */
+
+  .main_content {
+    position: relative;
+    display: block;
+    top: 50px;
+    font-size: 24px;
+  }
+
+  .service_main {
+    display: block;
+  }
+
+  .service_list {
+    display: flex;
+    flex-flow: row wrap;
+    flex-direction: column;
+    height: 100vh;
+    align-items: center;
+    position: relative;
+    top: 30px;
+  }
+
+  .service_item {
+    display: block;
+    min-width: 45%;
+  }
+
+  .register_btn {
+    margin-bottom: 25px;
+  }
+
+  .service_time {
+    font-size: 28px;
+  }
+
+  .service_price {
+    font-size: 44px;
+  }
+
+  .vnd {
+    font-size: 32px;
+  }
+  /* Yêu thích */
+
+  .playlist-title {
+    color: white;
+    height: 100px;
+    font-size: 50px;
+    line-height: 80px;
+    margin-left: 10%;
+    text-align: center;
+  }
+
+  .playlist-content {
+    width: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: block;
+    position: absolute;
+    top: 10%;
+  }
+  /* responsive tablet */
+
+  .main_content {
+    position: relative;
+    display: block;
+    top: 7%;
+    font-size: 24px;
+    overflow: hidden;
+  }
+
+  .service_main {
+    display: block;
+  }
+
+  .service_list {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    position: relative;
+    top: 7%;
+  }
+
+  .service_item {
+    display: block;
+    width: 40%;
+    min-width: 300px;
+  }
+
+  .register_btn {
+    margin-bottom: 25px;
+  }
+  /* Yêu thích */
+
+  .playlist-content {
+    width: 75%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: block;
+    position: absolute;
+    top: 10%;
+  }
 }
 /* tablet */
 @media only screen and (min-width: 740px) and (max-width: 1024px) {
   .login-form-wrapper,
-  .contact-form-wrapper {
+  .contact-form-wrapper,
+  .reg-form-wrapper {
     width: 70%;
   }
   .scale {

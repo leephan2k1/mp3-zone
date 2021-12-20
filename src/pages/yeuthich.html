@@ -22,13 +22,14 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.js"></script>
-    <link rel="stylesheet" href="../styles/style.css" />
+    <link rel="stylesheet" href="/src/styles/style.css" />
     <title>Mp3 zone - Yêu thích</title>
   </head>
+
   <body>
     <header>
       <div class="navBar">
-        <form class="navBar__search" onsubmit="return searchFrm(this)">
+        <form class="navBar__search">
           <div class="search__wrapper">
             <div class="search-button"><i class="fas fa-search"></i></div>
             <input
@@ -41,7 +42,7 @@
         </form>
         <div class="navBar__menu">
           <a class="feature" href="dichvu.html">Dịch vụ</a>
-          <a class="feature" href="lienhe.html">Liên hệ</a>
+          <a class="feature" href="dichvu.html">Liên hệ</a>
           <div class="user">
             <i class="fas fa-user-alt"></i>
             <div class="user__dropdown">
@@ -60,55 +61,120 @@
         </div>
       </a>
       <div class="side-bar__menu">
-        <a data-id="0" class="menu-feature" href="yeuthich.html">
+        <a
+          data-id="0"
+          class="menu-feature"
+          href="#"
+          onclick="return handleClick(this)"
+        >
           <i class="far fa-heart"></i>
           <span class="menu-feature__desc">Yêu thích</span>
         </a>
-        <a data-id="1" class="menu-feature" href="theodoi.html">
+        <a
+          data-id="1"
+          class="menu-feature"
+          href="#"
+          onclick="return handleClick(this)"
+        >
           <i class="far fa-list-alt"></i>
           <span class="menu-feature__desc">Theo dõi</span>
         </a>
-        <a data-id="2" class="menu-feature" href="danhsachphat.html">
+        <a
+          data-id="2"
+          class="menu-feature"
+          href="#"
+          onclick="return handleClick(this)"
+        >
           <i class="fas fa-headphones-alt"></i>
           <span class="menu-feature__desc">Danh sách phát</span>
         </a>
-        <a data-id="3" class="menu-feature" href="top100.html">
+        <a
+          data-id="3"
+          class="menu-feature"
+          href="top100.html"
+          onclick="return handleClick(this)"
+        >
           <i class="far fa-star"></i>
           <span class="menu-feature__desc">Top 100</span>
         </a>
-        <a data-id="4" class="menu-feature" href="#suggest">
+        <a
+          data-id="4"
+          class="menu-feature"
+          href="#"
+          onclick="return handleClick(this)"
+        >
           <i class="fas fa-guitar"></i>
           <span class="menu-feature__desc">MP3 Zone đề xuất</span>
         </a>
-        <a data-id="5" class="menu-feature" href="#last-song">
+        <a
+          data-id="5"
+          class="menu-feature"
+          href="#last-song"
+          onclick="return handleClick(this)"
+        >
           <i class="fas fa-history"></i>
           <span class="menu-feature__desc">Vừa nghe</span>
         </a>
       </div>
       <hr class="line" />
       <div class="side-bar__menu mobile">
-        <a data-id="6" class="menu-feature" href="#">
+        <a
+          data-id="6"
+          class="menu-feature"
+          href="#"
+          onclick="return handleClick(this)"
+        >
           <i class="fas fa-dollar-sign"></i>
           <span class="menu-feature__desc">Dịch vụ</span>
         </a>
-        <a data-id="7" class="menu-feature" href="#">
+        <a
+          data-id="7"
+          class="menu-feature"
+          href="#"
+          onclick="return handleClick(this)"
+        >
           <i class="fas fa-file-signature"></i>
           <span class="menu-feature__desc">Liên hệ</span>
         </a>
       </div>
       <hr class="line" />
       <div data-id="8" class="side-bar__menu mobile">
-        <a class="menu-feature" href="#">
+        <a class="menu-feature" href="#" onclick="return handleClick(this)">
           <i class="fas fa-sign-in-alt"></i>
           <span class="menu-feature__desc">Đăng nhập</span>
         </a>
-        <a data-id="9" class="menu-feature" href="#">
+        <a
+          data-id="9"
+          class="menu-feature"
+          href="#"
+          onclick="return handleClick(this)"
+        >
           <i class="fas fa-plus"></i>
           <span class="menu-feature__desc">Đăng ký</span>
         </a>
       </div>
     </nav>
-    <main class="general"></main>
+    <main class="playlist-main">
+      <div class="playlist-title">Bài hát yêu thích</div>
+      <div class="playlist-content">
+        <div class="playlist-item">
+          <span class="song-name">Di theo bong mat troi</span>
+          <span class="song-artist">Den vau</span>
+        </div>
+        <div class="playlist-item">
+          <span class="song-name">Di theo bong mat troi</span>
+          <span class="song-artist">Den vau</span>
+        </div>
+        <div class="playlist-item">
+          <span class="song-name">Di theo bong mat troi</span>
+          <span class="song-artist">Den vau</span>
+        </div>
+        <div class="playlist-item">
+          <span class="song-name">Di theo bong mat troi</span>
+          <span class="song-artist">Den vau</span>
+        </div>
+      </div>
+    </main>
     <footer>Footer</footer>
   </body>
   <script
@@ -121,8 +187,4 @@
     integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
     crossorigin="anonymous"
   ></script>
-  <!-- Active css  -->
-  <script src="../feature/handleActiveCSS.js"></script>
-  <!-- Search frm  -->
-  <script src="../feature/handleSearchFrm.js"></script>
 </html>
