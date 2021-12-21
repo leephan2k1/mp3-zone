@@ -16,7 +16,6 @@ if (localStorage.getItem("list-type")) {
   const ap = new APlayer({
     container: document.getElementById("aplayer"),
     listMaxHeight: 100,
-    order: "random",
     preload: "auto",
     loop: "all",
     audio: readyPlay,

@@ -99,5 +99,65 @@ const songList = [
     category: "Nhac tre",
     type: "J-pop",
   },
+  {
+    id: "012",
+    name: "Summertime",
+    artist: "K391",
+    url: "/public/music/Summertime.mp3",
+    cover:
+      "https://photo-resize-zmp3.zadn.vn/w480_r1x1_webp/cover/8/2/9/9/82998293f8c34d7999339490d0b90118.jpg",
+    category: "Nhac dien tu",
+    type: "EDM",
+  },
+  {
+    id: "013",
+    name: "Paradise",
+    artist: "Alan Walker, K-391, Boy In Space",
+    url: "/public/music/BoyinSpace.mp3",
+    cover:
+      "https://photo-resize-zmp3.zadn.vn/w480_r1x1_webp/cover/a/c/0/f/ac0fbb661d98b18a88985cbbd538dd97.jpg",
+    category: "Nhac dien tu",
+    type: "EDM",
+  },
+  {
+    id: "014",
+    name: "OhMyWay",
+    artist: "Alan Walker, Sabrina Carpenter, Farruko",
+    url: "/public/music/OhMyWay.mp3",
+    cover:
+      "https://photo-resize-zmp3.zadn.vn/w480_r1x1_webp/cover/d/f/a/d/dfadd8acafaec178f08bc68e8a2e9387.jpg",
+    category: "Nhac dien tu",
+    type: "EDM",
+  },
+  {
+    id: "015",
+    name: "Vùng lá me bay",
+    artist: "Như Quỳnh",
+    url: "/public/music/VungLaMeBay.mp3",
+    cover:
+      "https://photo-resize-zmp3.zadn.vn/w480_r1x1_webp/cover/d/8/4/d/d84dd1b4eacc2015054e7124bc83340d.jpg",
+    category: "Nhac tru tinh",
+    type: "tru-tinh",
+  },
+  {
+    id: "016",
+    name: "Bậu ơi đừng khóc",
+    artist: "Phi Nhung",
+    url: "/public/music/BauOiDungKhoc.mp3",
+    cover:
+      "https://photo-resize-zmp3.zadn.vn/w480_r1x1_webp/cover/2/5/8/3/2583ac830626d322279cc30bbb387673.jpg",
+    category: "Nhac tru tinh",
+    type: "tru-tinh",
+  },
+  {
+    id: "017",
+    name: "Nỗi nhớ mưa phai",
+    artist: "Mạnh Quỳnh",
+    url: "/public/music/NoiNhoMuaPhai.mp3",
+    cover:
+      "https://photo-resize-zmp3.zadn.vn/w480_r1x1_webp/cover/a/9/6/0/a96097ccfc26b5c3985adb5c8a31be8c.jpg",
+    category: "Nhac tru tinh",
+    type: "tru-tinh",
+  },
 ];
 export default songList;
