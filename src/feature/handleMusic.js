@@ -35,7 +35,8 @@ function handlePlay(e) {
         <h3 class="music-card__desc list-title">
           ${song.name}
         </h3>
-        <div class='follow'><i class="fas fa-heart"></i> Theo dõi</div>
+        <div class='follow'><i class="fas fa-heart"></i> Yêu thích</div>
+        <div class='cancel'><i class="fas fa-times"></i> Huỷ vừa nghe</div>
       </div>
     `;
   const rowListElement = lastSongElement.children[0].children[1];
@@ -60,6 +61,24 @@ function handlePlay(e) {
       "return handlePlay(this)"
     );
     element.children[0].children[0].setAttribute("data-id", `${song.id}`);
+
+    //Xử lý sự kiện yêu thích
+    const followBtn = document.querySelector("#last-song .follow");
+    followBtn.onclick = () => {
+      toggleLoveSong(song.id);
+      followBtn.classList.toggle("follow-active");
+    };
+    //Xử lý sự kiện xoá khỏi yêu thích
+    const cancelBtn = document.querySelector("#last-song .cancel");
+
+    cancelBtn.onclick = () => {
+      const removeElement = cancelBtn.closest(
+        ".center.col-sm-6.col-md-4.col-lg-3"
+      );
+      console.log(removeElement);
+
+      removeElement.remove();
+    };
   }
 
   playeZone.style.cssText = "display: block";

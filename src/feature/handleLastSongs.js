@@ -19,7 +19,8 @@ function loadLastSongs() {
         <h3 class="music-card__desc list-title">
           ${e.name}
         </h3>
-        <div class='follow'><i class="fas fa-heart"></i> Theo dõi</div>
+        <div class='follow'><i class="fas fa-heart"></i> Yêu thích</div>
+        <div class='cancel'><i class="fas fa-times"></i> Huỷ vừa nghe</div>
       </div>
     `;
       const rowListElement = lastSongElement.children[0].children[1];

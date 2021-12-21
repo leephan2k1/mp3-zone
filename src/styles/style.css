@@ -82,7 +82,7 @@ main.main-page {
 #last-song {
   grid-area: last-song;
   display: none;
-  margin-bottom: 50px;
+  margin-bottom: 100px;
 }
 #carousel {
   grid-area: carousel;
@@ -435,6 +435,11 @@ footer {
 .scale {
   transform: scale(70%);
 }
+.fa-heart,
+.fa-times {
+  margin: 0 5px;
+}
+
 /* Trang chủ */
 
 /* Top 100 */
@@ -501,7 +506,8 @@ footer {
 /* Đăng nhập */
 
 /* Theo dõi  */
-.follow {
+.follow,
+.cancel {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -511,6 +517,12 @@ footer {
   color: #fff;
   padding: 5px;
   cursor: pointer;
+}
+.cancel {
+  margin-top: 10px;
+}
+.cancel:hover {
+  background-color: tomato;
 }
 .follow-active {
   background-color: var(--logo-color);
