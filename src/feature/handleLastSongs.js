@@ -4,6 +4,8 @@ function loadLastSongs() {
     const lastSongElement = $("#last-song");
     lastSongElement.style.cssText = "display: block";
     const songList = JSON.parse(localStorage.getItem("last-song"));
+    // const loveList = JSON.parse(localStorage.getItem("love-list"));
+
     songList.forEach((e) => {
       const str = `
       <div class="center-column music-card-wrapper">
@@ -33,6 +35,51 @@ function loadLastSongs() {
         "return handlePlay(this)"
       );
       element.children[0].children[0].setAttribute("data-id", `${e.id}`);
+
+      //Xử lý sự kiện yêu thích
+      const followBtn = document.querySelector("#last-song .follow");
+      //Load lai active css
+      // if (loveList) {
+      //   loveList.forEach((e) => {
+      //     if (e === element.children[0].children[0].dataset.id) {
+      //       const parent = element.children[0].children[0].parentNode;
+      //       const followBtn = parent.children[2];
+      //       followBtn.classList.add("follow-active");
+      //     }
+      //   });
+      // }
+      followBtn.onclick = () => {
+        const loveList = JSON.parse(localStorage.getItem("love-list"));
+        // console.log(loveList);
+        // if (loveList) {
+        //   if (loveList.some((elem) => elem === e.id)) {
+        //     followBtn.classList.remove("follow-active");
+        //   } else {
+        //     followBtn.classList.add("follow-active");
+        //     // console.log("on");
+        //   }
+        // }
+        toggleLoveSong(e.id);
+      };
+      //Xử lý sự kiện xoá khỏi yêu thích
+      const cancelBtn = document.querySelector("#last-song .cancel");
+
+      cancelBtn.onclick = () => {
+        const removeElement = cancelBtn.closest(
+          ".center.col-sm-6.col-md-4.col-lg-3"
+        );
+        console.log(removeElement);
+        removeElement.remove();
+
+        //Xoa khoi danh sach vua nghe duoi local
+        let songList = JSON.parse(localStorage.getItem("last-song"));
+        songList = songList.filter((elem) => elem.id !== e.id);
+        if (songList.length) {
+          localStorage.setItem("last-song", JSON.stringify(songList));
+        } else {
+          localStorage.removeItem("last-song");
+        }
+      };
     });
   }
 }

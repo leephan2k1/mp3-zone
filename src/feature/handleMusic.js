@@ -65,8 +65,18 @@ function handlePlay(e) {
     //Xử lý sự kiện yêu thích
     const followBtn = document.querySelector("#last-song .follow");
     followBtn.onclick = () => {
+      const loveList = JSON.parse(localStorage.getItem("love-list"));
+      // console.log(song.id);
+      // if (loveList) {
+      //   if (loveList.some((elem) => elem === song.id)) {
+      //     followBtn.classList.remove("follow-active");
+      //     console.log(loveList.some((elem) => elem === song.id));
+      //   } else {
+      //     followBtn.classList.add("follow-active");
+      //     console.log(loveList.some((elem) => elem === song.id));
+      //   }
+      // }
       toggleLoveSong(song.id);
-      followBtn.classList.toggle("follow-active");
     };
     //Xử lý sự kiện xoá khỏi yêu thích
     const cancelBtn = document.querySelector("#last-song .cancel");
@@ -78,6 +88,12 @@ function handlePlay(e) {
       console.log(removeElement);
 
       removeElement.remove();
+      //Xoa khoi danh sach vua nghe duoi local
+      if (localStorage.getItem("last-song")) {
+        let songList = JSON.parse(localStorage.getItem("last-song"));
+        songList = songList.filter((e) => e.id !== song.id);
+        localStorage.setItem("last-song", JSON.stringify(songList));
+      }
     };
   }
 
